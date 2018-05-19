@@ -30,61 +30,39 @@
     border-radius: 50%;
     box-shadow: 4em 1em 0 0 white;
 }
-.hippo__foreground-leg{
+
+.hippo__leg{
     position: absolute;
     top: 6em;
     background-color: currentColor;
     height: 4em;
     width: 3em;
     border-radius: 1em;
-}
-.hippo__foreground-leg--back{
-    left: 5em;
-    animation: second-walk 5s linear infinite;
-}
-.hippo__foreground-leg--front{
-    left: 9em;
-    animation: first-walk 5s linear infinite;
-}
-.hippo__background-leg{
-    position: absolute;
-    top: 6em;
-    left: 1em;
-    background-color: currentColor;
-    opacity: 0.6;
-    height: 4em;
-    width: 3em;
-    border-radius: 1em;
-}
-.hippo__background-leg--back{
-    left: 1em;
-    animation: first-walk 5s linear infinite;
-}
-.hippo__background-leg--front{
-    left: 13em;
-    animation: second-walk 5s linear infinite;
-}
-  
-@keyframes first-walk{
-    0%{
-        transform: translateX(0);
-    }
-    50%{
-        transform: translateX(4em);
-    }
-    100%{
-        transform: translateX(0);
-    }
 }
 
-@keyframes second-walk{
-    0%{
-        transform: translateX(0);
+.hippo__leg--foreground{
+    left: 1em;
+    box-shadow: 12em 0 0 0;
+    animation: leg-walk 6s linear infinite;
+}
+
+.hippo__leg--background{
+    opacity: 0.6;
+    left: 5em;
+    box-shadow: 4em 0 0 0;
+    animation: leg-walk 6s linear infinite;
+    animation-delay: -3s;
+}
+
+/* 1em 5em 9 em 13em */
+  
+@keyframes leg-walk{
+    0%, 100%{
+        left: 1em;
+        box-shadow: 12em 0 0 0;
     }
     50%{
-        transform: translateX(-4em);
-    }
-    100%{
-        transform: translateX(0);
+        left: 5em;
+        box-shadow: 4em 0 0 0;
     }
 }
