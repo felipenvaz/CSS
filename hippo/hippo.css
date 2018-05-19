@@ -1,0 +1,90 @@
+.hippo{
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    font-size: 10px;
+    color: #00adea;
+}
+.hippo__body{
+    position: absolute;
+    top: 1em;
+    width: 20em;
+    height: 7em;
+    background-color: currentColor;
+    border-radius: 4em;
+}
+.hippo__head{
+    left: 10em;
+    position: absolute;
+    background-color: currentColor;
+    width: 6em;
+    height: 4em;
+    border-radius: 100%;
+}
+.hippo__head__ear{
+    position: absolute;
+    left: 0.4em;
+    width: 1em;
+    height: 1em;
+    background-color: currentColor;
+    border-radius: 50%;
+    box-shadow: 4em 1em 0 0 white;
+}
+.hippo__foreground-leg{
+    position: absolute;
+    top: 6em;
+    background-color: currentColor;
+    height: 4em;
+    width: 3em;
+    border-radius: 1em;
+}
+.hippo__foreground-leg--back{
+    left: 5em;
+    animation: second-walk 5s linear infinite;
+}
+.hippo__foreground-leg--front{
+    left: 9em;
+    animation: first-walk 5s linear infinite;
+}
+.hippo__background-leg{
+    position: absolute;
+    top: 6em;
+    left: 1em;
+    background-color: currentColor;
+    opacity: 0.6;
+    height: 4em;
+    width: 3em;
+    border-radius: 1em;
+}
+.hippo__background-leg--back{
+    left: 1em;
+    animation: first-walk 5s linear infinite;
+}
+.hippo__background-leg--front{
+    left: 13em;
+    animation: second-walk 5s linear infinite;
+}
+  
+@keyframes first-walk{
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(4em);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes second-walk{
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-4em);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
