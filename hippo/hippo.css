@@ -1,19 +1,23 @@
-.hippo{
+.hippo-container{
     position: absolute;
+    height: 10em;
+    width: 25em;
     top: 100px;
     left: 50px;
     font-size: 10px;
     color: #00adea;
 }
-.hippo__body{
+.hippo{
     position: absolute;
     top: 1em;
+    left: 4em;
     width: 20em;
     height: 7em;
     background-color: currentColor;
     border-radius: 4em;
 }
 .hippo__head{
+    top: -1em;
     left: 10em;
     position: absolute;
     background-color: currentColor;
@@ -33,28 +37,88 @@
 
 .hippo__leg{
     position: absolute;
-    top: 6em;
+    top: 5em;
     background-color: currentColor;
     height: 4em;
     width: 3em;
     border-radius: 1em;
+    animation: leg-walk 6s linear infinite;
 }
 
 .hippo__leg--foreground{
     left: 1em;
     box-shadow: 12em 0 0 0;
-    animation: leg-walk 6s linear infinite;
 }
 
 .hippo__leg--background{
     opacity: 0.6;
     left: 5em;
     box-shadow: 4em 0 0 0;
-    animation: leg-walk 6s linear infinite;
     animation-delay: -3s;
 }
 
-/* 1em 5em 9 em 13em */
+.hippo__tail{
+  position: absolute;
+  width: 2.5em;
+  top: 1.6em;
+  left: -2em;
+  height: 0.5em;
+  background-color: currentColor;
+  transform-origin: right 0;
+  transform: rotate(-75deg);
+  animation: tail-move 2s linear infinite;
+}
+
+.hippo-poo::before, .hippo-poo::after{
+  content: '';
+  position: absolute;
+  top: 3em;
+  left: 4em;
+  height: 0.5em;
+  width: 0.5em;
+  border-radius: 50%;
+  background-color: brown;
+  
+}
+
+.hippo-poo::before{
+  animation: hippo-pooping2 2s linear infinite;
+}
+
+.hippo-poo::after{
+  animation: hippo-pooping 2s linear infinite;
+  animation-delay: -1s;
+}
+
+@keyframes hippo-pooping{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    left: 0em;
+  }
+}
+
+@keyframes hippo-pooping2{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    left: 0em;
+    top: 6em;
+  }
+}
+
+@keyframes tail-move{
+  0%, 100%{
+    transform: rotate(-75deg);
+  }
+  50%{
+    transform: rotate(0);
+  }
+}
   
 @keyframes leg-walk{
     0%, 100%{
