@@ -1,0 +1,66 @@
+.icon-holder{
+    border: 1px solid black;
+    height: 30em;
+    width: 30em;
+    font-size: 10px;
+    color: gray;
+    display: flex;
+  }
+  
+  .display-settings{
+    height: 24em;
+    width: 24em;
+    border: 2em solid currentColor;
+    border-radius: 4em;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .wrench{
+    background-color: currentColor;
+    border-radius: 50%;
+    position: absolute;
+    top: 4em;
+    left: 4em;
+    height: 10em;
+    width: 10em;
+  }
+  
+  .display-settings:hover .wrench{
+    animation: move 4s linear infinite;
+  }
+  
+  @keyframes move{
+    0%, 100%{
+      transform: rotate(0deg);
+    }
+    25%{
+      transform: rotate(-10deg);
+    }
+    75%{
+      transform: rotate(10deg);
+    }
+  }
+  
+  .wrench:before{
+    content: '';
+    position: absolute;
+    top: 1em;
+    left: -1em;
+    background-color: white;
+    width: 8em;
+    height: 4em;
+    transform: rotate(45deg);
+  }
+  
+  .wrench:after{
+    content: '';
+    position: absolute;
+    top: 9em;
+    left: 6em;
+    background-color: currentColor;
+    width: 10em;
+    height: 4em;
+    transform: rotate(45deg);
+  }
