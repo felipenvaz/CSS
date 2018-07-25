@@ -1,0 +1,33 @@
+.spinner{
+    font-size: 10px;
+    width: 6em;
+    height: 6em;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2em solid lightgray;
+    position: relative;
+  }
+  .spinner:before{
+    content: '';
+    position: absolute;
+    left: -2em;
+    top: -2em;
+    width: 6em;
+    height: 6em;
+    border: 2em solid transparent;
+    border-top: 2em solid gray;
+    border-radius: 100%;
+    animation-name: spin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  @keyframes spin{
+    0%, 0.01%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
